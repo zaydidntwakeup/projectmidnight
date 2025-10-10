@@ -1,0 +1,43 @@
+/* Print style*/
+@media print {
+   header h1 main h2,
+   main p,
+   main img,
+   main figcaption,
+   main ul,
+   main li {
+      display: block;
+   }
+   body {
+      background: none;
+      font-size: 12px;
+      line-height: 1.2;
+      margin: 0.5in;
+   }
+   header h1 {
+      font-size: 18px;
+      margin-bottom: 10px;
+   }
+   main h2 {
+      font-size: 14px;
+      margin: 8px 0;
+   }
+
+   main p,
+   main ul,
+   main li,
+   main figcaption {
+      font-size: 12px;
+      margin: 4px 0;
+   }
+
+   main img {
+      max-width: 60%;
+      height: auto;
+      margin: 10px auto;
+   }
+   footer,
+   audio {
+      display: none;
+   }
+}

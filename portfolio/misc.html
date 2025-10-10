@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>PROJECT MIDNIGHT | GALLERY</title>
+      <link rel="stylesheet" href="base.css" />
+      <link rel="stylesheet" href="gallery.css" />
+      <script src="clock.js"></script>
+   </head>
+   <body>
+      <header>
+         <div id="clock"></div>
+         <h1>MIDNIGHT GALLERY</h1>
+         <nav>
+            <ul>
+               <li><a href="home.html">HOME</a></li>
+               <li><a href="grandtour.html">GRAND TOUR</a></li>
+               <li><a href="espionage.html">ESPIONAGE 2114</a></li>
+               <li><a href="misc.html">GALLERY</a></li>
+            </ul>
+         </nav>
+      </header>
+
+      <main class="container">
+         <article>
+            <h2>PROJECT MIDNIGHT GALLERY</h2>
+
+            <!-- 🎞️ Slideshow Section -->
+            <section class="slideshow-container">
+               <div class="slide fade">
+                  <img src="cross.jpeg" alt="Cross" onclick="openLightbox(this)" />
+               </div>
+               <div class="slide fade">
+                  <img src="reflection.jpeg" alt="Water reflection" onclick="openLightbox(this)" />
+               </div>
+               <div class="slide fade">
+                  <img src="2rth.jpeg" alt="2RTH" onclick="openLightbox(this)" />
+               </div>
+               <div class="slide fade">
+                  <img src="images/fish.jpeg" alt="Fish reflection" onclick="openLightbox(this)" />
+               </div>
+               <div class="slide fade">
+                  <img src="images/mech.jpeg" alt="Purple mech" onclick="openLightbox(this)" />
+               </div>
+               <div class="slide fade">
+                  <img src="images/pitlotgundam.jpeg" alt="Gundam Pilot" onclick="openLightbox(this)" />
+               </div>
+            </section>
+
+            <!-- 💡 Lightbox Overlay -->
+            <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+               <img id="lightbox-img" src="" alt="Full-size image" />
+            </div>
+         </article>
+      </main>
+      <script src="slideshow.js"></script>
+      <!-- FOOTER -->
+      <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+         <div class="container footer-inner">
+            <nav aria-label="Footer navigation">
+               <ul class="footer-list">
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+               </ul>
+            </nav>
+
+            <div class="footer-meta">
+               <span class="brand">Project Midnight</span>
+               <span class="diamond-sep" aria-hidden="true"></span>
+               <small
+                  >© <span class="owner"><a href="https://linktr.ee/zaydidntwakeup">zaydidntwakeup</a></span></small
+               >
+            </div>
+         </div>
+      </footer>
+   </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>PROJECT MIDNIGHT | ESPIONAGE 2114</title>
+      <link rel="stylesheet" href="base.css" />
+      <link rel="stylesheet" href="animation.css" />
+      <script src="clock.js"></script>
+      <script src="espionage.js"></script>
+   </head>
+   <body>
+      <!-- HEADER -->
+      <header>
+         <div id="clock"></div>
+         <h1>ESPIONAGE 2114</h1>
+         <nav>
+            <ul>
+               <li><a href="home.html">HOME</a></li>
+               <li><a href="grandtour.html">GRAND TOUR</a></li>
+               <li><a href="espionage.html">ESPIONAGE 2114</a></li>
+               <li><a href="misc.html">GALLERY</a></li>
+            </ul>
+         </nav>
+      </header>
+
+      <main class="container">
+         <article>
+            <h2>OR1GYN</h2>
+            <p>
+               Set in the neon-soaked streets of the futuristic year 2114, <strong>Espionage 2114</strong> follows an intelligence agent trapped between loyalty and rebellion. In a world ruled by surveillance and secrets, every choice could rewrite the
+               truth or erase it completely.
+            </p>
+
+            <!-- PDF Section -->
+            <section class="pdf-container">
+               <!-- Replace espionage2114.pdf with your actual file name -->
+               <iframe src="espionage/espionage2114.pdf" title="Espionage 2114 PDF"></iframe>
+            </section>
+
+            <!-- Gallery Section -->
+            <section class="gallery">
+               <div class="gallery-item">
+                  <img src="espionage/aika.jpeg" alt="AIKA THE CODERIPPER" onclick="openLightbox(this)" />
+                  <div class="caption">AIKA THE CODERIPPER</div>
+               </div>
+               <div class="gallery-item">
+                  <img src="espionage/noctis.jpeg" alt="NOCTIS/WRAITH" onclick="openLightbox(this)" />
+                  <div class="caption">NOCTIS A.K.A. WRAITH</div>
+               </div>
+               <div class="gallery-item">
+                  <img src="espionage/sylas.jpeg" alt="SYLAS THE BYTESMITH" onclick="openLightbox(this)" />
+                  <div class="caption">SYLAS THE BYTESMITH</div>
+               </div>
+               <div class="gallery-item">
+                  <img src="espionage/voss.jpeg" alt="CHIEF ARDEN VOSS" onclick="openLightbox(this)" />
+                  <div class="caption">CHIEF ARDEN VOSS</div>
+               </div>
+               <div class="gallery-item">
+                  <img src="espionage/sara.jpeg" alt="SARA" onclick="openLightbox(this)" />
+                  <div class="caption">SARA</div>
+               </div>
+               <div class="gallery-item">
+                  <img src="espionage/preston.jpeg" alt="PRESTON GRANT" onclick="openLightbox(this)" />
+                  <div class="caption">PRESTON GRANT</div>
+               </div>
+            </section>
+
+            <!-- Lightbox (hidden by default) -->
+            <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+               <img id="lightbox-img" src="" alt="" />
+            </div>
+         </article>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+         <div class="container footer-inner">
+            <nav aria-label="Footer navigation">
+               <ul class="footer-list">
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+               </ul>
+            </nav>
+
+            <div class="footer-meta">
+               <span class="brand">Project Midnight</span>
+               <span class="diamond-sep" aria-hidden="true"></span>
+               <small
+                  >© <span class="owner"><a href="https://linktr.ee/zaydidntwakeup">zaydidntwakeup</a></span></small
+               >
+            </div>
+         </div>
+      </footer>
+   </body>
+</html>

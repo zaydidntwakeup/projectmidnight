@@ -1,0 +1,627 @@
+@charset "utf-8";
+
+/* ===== Base Style ===== */
+body {
+   margin: 0;
+   font-family: "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
+   background-color: rgb(91, 90, 110); /* slate background for depth */
+   color: rgb(255, 255, 255);
+   line-height: 1.6;
+}
+
+/* General container */
+.container {
+   width: 90%;
+   max-width: 1200px;
+   margin: auto;
+   padding: 20px;
+}
+
+/* ===== Header ===== */
+header {
+   background: url("images/banner2.jpg") no-repeat center center/cover;
+   color: rgb(255, 255, 255);
+   padding: 40px 0 20px 0;
+   text-align: center;
+   border-bottom: 6px solid rgb(255, 49, 49);
+}
+
+header h1 {
+   margin: 0;
+   font-size: 2.8rem;
+   letter-spacing: 3px;
+   color: rgb(255, 249, 107);
+   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+/* Live clock */
+#clock {
+   position: absolute;
+   top: 15px;
+   left: 20px;
+   font-size: 1em;
+   color: rgb(255, 249, 107);
+   font-family: monospace;
+}
+
+/* ===== Navigation ===== */
+nav {
+   margin-top: 20px;
+}
+
+nav ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   gap: 30px;
+}
+
+nav ul li a {
+   color: rgb(255, 255, 255);
+   text-decoration: none;
+   font-weight: bold;
+   font-size: 1.1em;
+   position: relative;
+   transition: all 0.3s ease;
+}
+
+nav ul li a::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: -4px;
+   width: 0%;
+   height: 2px;
+   background: rgb(255, 49, 49);
+   transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+   width: 100%;
+}
+
+nav ul li a:hover {
+   color: rgb(255, 249, 107);
+}
+
+/* ===== Main Section ===== */
+main {
+   background: rgb(255, 255, 255);
+   color: rgb(51, 51, 51);
+   margin: 40px auto;
+   padding: 30px;
+   border-radius: 12px;
+   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+   text-align: center;
+}
+
+main h2 {
+   color: rgb(51, 86, 182);
+   border-bottom: 3px solid rgb(255, 49, 49);
+   padding-bottom: 8px;
+   margin-bottom: 20px;
+   font-size: 1.8rem;
+}
+
+main h3 {
+   color: rgb(91, 90, 110);
+   margin-top: 20px;
+}
+
+/* ===== Lists ===== */
+ul {
+   margin: 10px 0;
+   padding-left: 20px;
+}
+h2 + ul {
+   list-style-type: none;
+   padding-left: 0;
+}
+
+/* ===== Images ===== */
+img {
+   max-width: 100%;
+   height: auto;
+   border-radius: 10px;
+   display: block;
+   margin: 25px auto;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+section img {
+   display: block;
+   height: auto;
+   max-width: 45%;
+}
+
+/* ===== Video ===== */
+video {
+   max-width: 80%;
+   height: auto;
+   display: block;
+   border-radius: 10px;
+   margin: 25px auto;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Form ===== */
+form {
+   margin-top: 20px;
+   background: rgb(255, 255, 255);
+   color: rgb(51, 51, 51);
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+   font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+   width: 100%;
+   padding: 10px;
+   margin: 6px 0 12px;
+   border: 1px solid rgb(91, 90, 110);
+   border-radius: 5px;
+}
+
+input[type="submit"] {
+   background: rgb(255, 49, 49);
+   color: rgb(255, 255, 255);
+   border: none;
+   padding: 12px 20px;
+   border-radius: 8px;
+   cursor: pointer;
+   font-weight: bold;
+   transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+   background: rgb(51, 86, 182);
+   transform: translateY(-2px);
+}
+
+/* Form input feedback */
+input:focus:valid {
+   background: rgb(220, 255, 220);
+}
+input:focus:invalid {
+   background: rgb(255, 232, 233);
+}
+
+/* ===== Footer ===== */
+/*footer {
+   background-color: rgb(51, 86, 182);
+   color: rgb(255, 255, 255);
+   text-align: center;
+   padding: 20px;
+   margin-top: 40px;
+   font-size: 0.9em;
+   border-top: 4px solid rgb(255, 49, 49);
+} */
+/* FOOTER CSS (drop into your stylesheet) */
+/* Palette used:
+   slate gray: rgb(91, 90, 110)
+   bold blue:  rgb(51, 86, 182)
+   bright red: rgb(255, 49, 49)
+   soft yellow: rgb(255, 249, 107)
+   white: rgb(255,255,255)
+*/
+
+.site-footer {
+   background: rgb(51, 86, 182); /* bold blue */
+   color: rgb(255, 255, 255); /* white */
+   padding: 28px 0;
+   border-top: 4px solid rgb(255, 49, 49); /* bright red accent */
+   position: relative;
+   z-index: 0;
+}
+.site-footer a {
+   color: white;
+   text-decoration: none;
+}
+
+/* Decorative big diamond at top center (optional) */
+.site-footer::before {
+   content: "";
+   position: absolute;
+   top: -18px;
+   left: 50%;
+   transform: translateX(-50%) rotate(45deg);
+   width: 36px;
+   height: 36px;
+   background: rgb(255, 249, 107); /* soft yellow */
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+   border-radius: 4px;
+   z-index: 1;
+}
+
+/* inner layout */
+.footer-inner {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 20px;
+   width: 90%;
+   max-width: 1200px;
+   margin: 0 auto;
+   flex-wrap: wrap;
+}
+
+/* link list with diamond separators */
+.footer-list {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+/* each li gets a small diamond to the right via ::after except last */
+.footer-list li {
+   position: relative;
+   padding-right: 18px; /* room for diamond */
+}
+
+.footer-list li::after {
+   content: "";
+   position: absolute;
+   right: 4px;
+   top: 50%;
+   transform: translateY(-50%) rotate(45deg);
+   width: 10px;
+   height: 10px;
+   background: rgb(255, 249, 107); /* soft yellow */
+   border-radius: 2px;
+   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+   transition: transform 0.18s ease, background 0.18s ease;
+   pointer-events: none;
+   opacity: 0.95;
+}
+
+/* remove diamond after the last item */
+.footer-list li:last-child::after {
+   display: none;
+}
+
+/* links */
+.footer-list a {
+   color: rgb(255, 255, 255);
+   text-decoration: none;
+   font-weight: 600;
+   letter-spacing: 0.02em;
+   padding: 6px 2px;
+   transition: color 0.18s ease, transform 0.12s ease;
+}
+
+/* hover: emphasize link and the diamond next to it */
+.footer-list a:hover,
+.footer-list a:focus {
+   color: rgb(255, 249, 107); /* soft yellow */
+   outline: none;
+   transform: translateY(-2px);
+}
+
+.footer-list li:hover::after,
+.footer-list li:focus-within::after {
+   transform: translateY(-50%) rotate(45deg) scale(1.25);
+   background: rgb(255, 49, 49); /* bright red on hover */
+}
+
+/* footer meta (brand + copyright) */
+.footer-meta {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   color: rgba(255, 255, 255, 0.95);
+   font-size: 0.95rem;
+}
+
+/* small diamond between brand and copyright */
+.footer-meta .diamond-sep {
+   display: inline-block;
+   width: 12px;
+   height: 12px;
+   transform: rotate(45deg);
+   background: rgb(255, 249, 107);
+   border-radius: 2px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+}
+
+/* small-screen behavior */
+@media (max-width: 640px) {
+   .footer-inner {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+   }
+   .footer-list {
+      justify-content: center;
+      padding-bottom: 6px;
+   }
+   .site-footer::before {
+      top: -14px;
+      width: 28px;
+      height: 28px;
+   }
+}
+
+/* Accessibility: focus outline for keyboard nav */
+.footer-list a:focus {
+   box-shadow: 0 0 0 3px rgba(255, 249, 107, 0.18);
+   border-radius: 4px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+   nav ul {
+      flex-direction: column;
+      gap: 12px;
+   }
+   header h1 {
+      font-size: 2rem;
+   }
+}
+
+/* pdf and chapters */
+.chapters-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+   gap: 20px;
+   margin: 30px auto;
+   max-width: 900px;
+}
+
+.chapter {
+   background: #181818;
+   color: #f3f3f3;
+   border-radius: 12px;
+   overflow: hidden;
+   cursor: pointer;
+   text-align: center;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chapter:hover {
+   transform: scale(1.03);
+   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.chapter img {
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+#pdf-viewer {
+   margin-top: 40px;
+   background: #000;
+   border-radius: 10px;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+}
+
+#pdf-viewer.hidden {
+   display: none;
+}
+
+#pdf-viewer iframe {
+   width: 100%;
+   height: 80vh;
+}
+
+.pdf-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: #111;
+   color: #f3f3f3;
+   padding: 10px 15px;
+}
+
+.pdf-header button {
+   background: none;
+   border: none;
+   color: #f3f3f3;
+   font-size: 1.2em;
+   cursor: pointer;
+}
+/* espionage pdf */
+.pdf-container {
+   margin: 30px auto;
+   text-align: center;
+   width: 80%;
+   height: 600px;
+   border: 2px solid #444;
+   border-radius: 10px;
+   overflow: hidden;
+}
+
+.pdf-container iframe {
+   width: 100%;
+   height: 100%;
+   border: none;
+}
+
+/* Image gallery styling */
+.gallery {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   gap: 30px;
+   margin: 60px auto;
+   width: 95%;
+   max-width: 1400px;
+   justify-items: center;
+}
+
+.gallery-item {
+   background-color: rgb(10, 17, 36); /* deep navy from gundam.png */
+   border-radius: 12px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+   overflow: hidden;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+}
+
+.caption {
+   width: 100%;
+   background-color: rgb(10, 17, 36); /* same deep navy */
+   color: rgb(255, 215, 0); /* gold accent for contrast */
+   text-align: center;
+   font-weight: bold;
+   padding: 12px 0;
+   font-size: 1.1em;
+   letter-spacing: 1px;
+   border-bottom: 3px solid rgb(204, 37, 44); /* crimson red accent */
+}
+
+.gallery-item img {
+   width: auto;
+   height: auto;
+   background-color: rgb(22, 22, 30); /* fallback if image is smaller */
+}
+
+/* Lightbox overlay */
+.lightbox {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.9);
+   justify-content: center;
+   align-items: center;
+   z-index: 1000;
+   cursor: zoom-out;
+}
+
+/* Full-size image styling */
+.lightbox img {
+   max-width: 90%;
+   max-height: 90%;
+   border-radius: 10px;
+   box-shadow: 0 0 25px rgba(255, 215, 0, 0.4); /* subtle gold glow */
+   cursor: default;
+   transition: transform 0.3s ease;
+}
+
+/* Small zoom effect when opened */
+.lightbox img:hover {
+   transform: scale(1.02);
+}
+/* for slideshow */
+/* === Slideshow Container === */
+.slideshow-container {
+   position: relative;
+   max-width: 900px;
+   margin: 40px auto;
+   border-radius: 12px;
+   overflow: hidden;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Each individual slide */
+.slide {
+   display: none;
+   width: 100%;
+}
+
+.slide img {
+   width: 100%;
+   height: auto;
+   border-radius: 12px;
+   cursor: pointer;
+   transition: transform 0.4s ease;
+}
+
+.slide img:hover {
+   transform: scale(1.03);
+}
+
+/* === Fade Animation === */
+.fade {
+   animation-name: fade;
+   animation-duration: 1.5s;
+}
+
+@keyframes fade {
+   from {
+      opacity: 0.4;
+   }
+   to {
+      opacity: 1;
+   }
+}
+
+/* === Lightbox Overlay === */
+.lightbox {
+   display: none;
+   position: fixed;
+   z-index: 1000;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.85);
+   justify-content: center;
+   align-items: center;
+}
+
+.lightbox img {
+   max-width: 90%;
+   max-height: 90%;
+   border-radius: 10px;
+   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+/* === GUNDAM FONT IMPORT === */
+@font-face {
+   font-family: "Gundam";
+   src: url("Gundam.otf") format("opentype"), url("Gundam.ttf") format("truetype");
+   font-weight: normal;
+   font-style: normal;
+}
+
+/* === APPLY GUNDAM FONT === */
+header h1,
+footer .brand,
+h2,
+nav a,
+.main-title {
+   font-family: "Gundam", sans-serif;
+   letter-spacing: 2px;
+   text-transform: uppercase;
+   color: #e3e3e3; /* metallic white text */
+   text-shadow: 0 0 8px rgba(150, 200, 255, 0.35); /* subtle glow */
+}
+p {
+   font-family: "Gundam", sans-serif;
+   color: rgb(255, 49, 49);
+}
+
+/* Optional style for emphasis */
+h1,
+h2 {
+   font-size: 2rem;
+   font-weight: normal;
+}
+
+/* Optional: glowing hover effect for navigation */
+nav a:hover {
+   color: #00ccff;
+   text-shadow: 0 0 10px rgba(0, 200, 255, 0.6);
+   transition: 0.3s ease;
+}
+
+figcaption {
+   font-family: "Gundam", sans-serif;
+   color: rgb(255, 49, 49);
+}
