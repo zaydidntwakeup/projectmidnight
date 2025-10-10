@@ -11,8 +11,13 @@ function openPDF(pdfSrc, title) {
    pdfTitle.textContent = title;
 
    viewer.classList.remove("hidden");
-   document.body.style.overflow = "hidden"; // Prevent background scrolling
-   viewer.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to viewer
+
+   // Prevent background scroll ONLY on desktop
+   if (window.innerWidth > 768) {
+      document.body.style.overflow = "hidden";
+   }
+
+   viewer.scrollIntoView({ behavior: "smooth" });
 }
 
 function closePDF() {
@@ -22,5 +27,7 @@ function closePDF() {
    // Clear the PDF and hide the viewer
    frame.src = "";
    viewer.classList.add("hidden");
-   document.body.style.overflow = "auto"; // Restore page scroll
+
+   // Restore scroll if it was disabled
+   document.body.style.overflow = "auto";
 }
