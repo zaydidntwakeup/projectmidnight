@@ -28,3 +28,23 @@ function closeLightbox(event) {
       lightbox.style.display = "none";
    }
 }
+function zoomImage(img) {
+   const zoomViewer = document.getElementById("zoom-viewer");
+   const zoomImg = document.getElementById("zoom-img");
+
+   zoomImg.src = img.src; // Set image source
+   zoomViewer.classList.add("active");
+
+   // Optional: pause slideshow if you're using setInterval
+   if (typeof pauseSlideshow === "function") pauseSlideshow();
+}
+
+function closeZoom(event) {
+   const zoomViewer = document.getElementById("zoom-viewer");
+   if (event.target.id === "zoom-viewer" || event.target.id === "zoom-img") {
+      zoomViewer.classList.remove("active");
+
+      // Optional: resume slideshow
+      if (typeof resumeSlideshow === "function") resumeSlideshow();
+   }
+}

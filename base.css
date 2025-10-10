@@ -4,7 +4,7 @@
 body {
    margin: 0;
    font-family: "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
-   background-color: rgb(91, 90, 110); /* slate background for depth */
+   background-color: rgb(91, 90, 110);
    color: rgb(255, 255, 255);
    line-height: 1.6;
 }
@@ -33,6 +33,7 @@ header h1 {
    color: rgb(255, 249, 107);
    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
+
 /* Live clock */
 #clock {
    position: absolute;
@@ -104,19 +105,10 @@ main h2 {
    font-size: 1.8rem;
 }
 
-main h3 {
-   color: rgb(91, 90, 110);
-   margin-top: 20px;
-}
-
 /* ===== Lists ===== */
 ul {
    margin: 10px 0;
    padding-left: 20px;
-}
-h2 + ul {
-   list-style-type: none;
-   padding-left: 0;
 }
 
 /* ===== Images ===== */
@@ -128,6 +120,7 @@ img {
    margin: 25px auto;
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 section img {
    display: block;
    height: auto;
@@ -185,47 +178,21 @@ input[type="submit"]:hover {
    transform: translateY(-2px);
 }
 
-/* Form input feedback */
-input:focus:valid {
-   background: rgb(220, 255, 220);
-}
-input:focus:invalid {
-   background: rgb(255, 232, 233);
-}
-
 /* ===== Footer ===== */
-/*footer {
-   background-color: rgb(51, 86, 182);
-   color: rgb(255, 255, 255);
-   text-align: center;
-   padding: 20px;
-   margin-top: 40px;
-   font-size: 0.9em;
-   border-top: 4px solid rgb(255, 49, 49);
-} */
-/* FOOTER CSS (drop into your stylesheet) */
-/* Palette used:
-   slate gray: rgb(91, 90, 110)
-   bold blue:  rgb(51, 86, 182)
-   bright red: rgb(255, 49, 49)
-   soft yellow: rgb(255, 249, 107)
-   white: rgb(255,255,255)
-*/
-
 .site-footer {
-   background: rgb(51, 86, 182); /* bold blue */
-   color: rgb(255, 255, 255); /* white */
+   background: rgb(51, 86, 182);
+   color: rgb(255, 255, 255);
    padding: 28px 0;
-   border-top: 4px solid rgb(255, 49, 49); /* bright red accent */
+   border-top: 4px solid rgb(255, 49, 49);
    position: relative;
-   z-index: 0;
 }
+
 .site-footer a {
    color: white;
    text-decoration: none;
 }
 
-/* Decorative big diamond at top center (optional) */
+/* Decorative diamond */
 .site-footer::before {
    content: "";
    position: absolute;
@@ -234,13 +201,12 @@ input:focus:invalid {
    transform: translateX(-50%) rotate(45deg);
    width: 36px;
    height: 36px;
-   background: rgb(255, 249, 107); /* soft yellow */
+   background: rgb(255, 249, 107);
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
    border-radius: 4px;
-   z-index: 1;
 }
 
-/* inner layout */
+/* Inner layout */
 .footer-inner {
    display: flex;
    align-items: center;
@@ -252,7 +218,6 @@ input:focus:invalid {
    flex-wrap: wrap;
 }
 
-/* link list with diamond separators */
 .footer-list {
    display: flex;
    align-items: center;
@@ -262,99 +227,9 @@ input:focus:invalid {
    margin: 0;
 }
 
-/* each li gets a small diamond to the right via ::after except last */
-.footer-list li {
-   position: relative;
-   padding-right: 18px; /* room for diamond */
-}
-
-.footer-list li::after {
-   content: "";
-   position: absolute;
-   right: 4px;
-   top: 50%;
-   transform: translateY(-50%) rotate(45deg);
-   width: 10px;
-   height: 10px;
-   background: rgb(255, 249, 107); /* soft yellow */
-   border-radius: 2px;
-   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-   transition: transform 0.18s ease, background 0.18s ease;
-   pointer-events: none;
-   opacity: 0.95;
-}
-
-/* remove diamond after the last item */
+/* Remove diamond after last link */
 .footer-list li:last-child::after {
    display: none;
-}
-
-/* links */
-.footer-list a {
-   color: rgb(255, 255, 255);
-   text-decoration: none;
-   font-weight: 600;
-   letter-spacing: 0.02em;
-   padding: 6px 2px;
-   transition: color 0.18s ease, transform 0.12s ease;
-}
-
-/* hover: emphasize link and the diamond next to it */
-.footer-list a:hover,
-.footer-list a:focus {
-   color: rgb(255, 249, 107); /* soft yellow */
-   outline: none;
-   transform: translateY(-2px);
-}
-
-.footer-list li:hover::after,
-.footer-list li:focus-within::after {
-   transform: translateY(-50%) rotate(45deg) scale(1.25);
-   background: rgb(255, 49, 49); /* bright red on hover */
-}
-
-/* footer meta (brand + copyright) */
-.footer-meta {
-   display: flex;
-   align-items: center;
-   gap: 12px;
-   color: rgba(255, 255, 255, 0.95);
-   font-size: 0.95rem;
-}
-
-/* small diamond between brand and copyright */
-.footer-meta .diamond-sep {
-   display: inline-block;
-   width: 12px;
-   height: 12px;
-   transform: rotate(45deg);
-   background: rgb(255, 249, 107);
-   border-radius: 2px;
-   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
-}
-
-/* small-screen behavior */
-@media (max-width: 640px) {
-   .footer-inner {
-      flex-direction: column;
-      gap: 12px;
-      text-align: center;
-   }
-   .footer-list {
-      justify-content: center;
-      padding-bottom: 6px;
-   }
-   .site-footer::before {
-      top: -14px;
-      width: 28px;
-      height: 28px;
-   }
-}
-
-/* Accessibility: focus outline for keyboard nav */
-.footer-list a:focus {
-   box-shadow: 0 0 0 3px rgba(255, 249, 107, 0.18);
-   border-radius: 4px;
 }
 
 /* ===== 📘 Chapters Grid ===== */
@@ -386,103 +261,28 @@ input:focus:invalid {
    height: auto;
    display: block;
 }
-
-/* ===== 📄 PDF Viewer (Grand Tour, etc.) ===== */
-#pdf-viewer {
-   margin-top: 40px;
-   background: #000;
-   border-radius: 10px;
-   overflow: hidden;
-   display: flex;
-   flex-direction: column;
-}
-
-#pdf-viewer.hidden {
-   display: none;
-}
-
-#pdf-viewer iframe {
-   width: 100%;
-   height: 80vh;
-   border: none;
+/* Make the whole card clickable and preserve styles */
+.chapter-link {
    display: block;
-   overflow: auto;
-   -webkit-overflow-scrolling: touch;
+   color: inherit;
+   text-decoration: none;
 }
 
-/* PDF Header */
-.pdf-header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   background: #111;
-   color: #f3f3f3;
-   padding: 10px 15px;
+/* Provide visible focus styling for keyboard users */
+.chapter-link:focus,
+.chapter-link:focus-visible {
+   outline: 3px solid rgba(255, 249, 107, 0.14);
+   border-radius: 12px;
 }
 
-.pdf-header button {
-   background: none;
-   border: none;
-   color: #f3f3f3;
-   font-size: 1.2em;
-   cursor: pointer;
+/* Keep hover effects working when the link wraps the .chapter */
+.chapter-link:hover .chapter,
+.chapter-link:focus .chapter {
+   transform: scale(1.03);
+   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
 }
 
-/* =====  Espionage PDF ===== */
-.pdf-container {
-   margin: 30px auto;
-   text-align: center;
-   width: 80%;
-   height: 600px;
-   border: 2px solid #444;
-   border-radius: 10px;
-   overflow: hidden;
-   background: #000;
-   -webkit-overflow-scrolling: touch;
-}
-
-.pdf-container iframe {
-   width: 100%;
-   height: 100%;
-   border: none;
-   display: block;
-   overflow: auto; /* ✅ scroll inside iframe */
-   -webkit-overflow-scrolling: touch;
-}
-
-/* ===== 📱 Responsive Adjustments ===== */
-@media (max-width: 1024px) {
-   .pdf-container {
-      width: 90%;
-      height: 75vh;
-   }
-   #pdf-viewer iframe {
-      height: 75vh;
-   }
-}
-
-@media (max-width: 768px) {
-   .pdf-container {
-      width: 95%;
-      height: 70vh;
-   }
-   #pdf-viewer iframe {
-      height: 70vh;
-   }
-}
-
-@media (max-width: 480px) {
-   .pdf-container {
-      width: 100%;
-      height: 65vh;
-      border-radius: 0;
-   }
-   #pdf-viewer iframe {
-      height: 65vh;
-   }
-}
-
-/* Image gallery styling */
+/* ===== 🖼️ Gallery ===== */
 .gallery {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -494,7 +294,7 @@ input:focus:invalid {
 }
 
 .gallery-item {
-   background-color: rgb(10, 17, 36); /* deep navy from gundam.png */
+   background-color: rgb(10, 17, 36);
    border-radius: 12px;
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
    overflow: hidden;
@@ -502,129 +302,67 @@ input:focus:invalid {
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: flex-start;
 }
 
 .caption {
    width: 100%;
-   background-color: rgb(10, 17, 36); /* same deep navy */
-   color: rgb(255, 215, 0); /* gold accent for contrast */
+   background-color: rgb(10, 17, 36);
+   color: rgb(255, 215, 0);
    text-align: center;
    font-weight: bold;
    padding: 12px 0;
    font-size: 1.1em;
    letter-spacing: 1px;
-   border-bottom: 3px solid rgb(204, 37, 44); /* crimson red accent */
+   border-bottom: 3px solid rgb(204, 37, 44);
 }
 
-.gallery-item img {
-   width: auto;
+/* Base slideshow image style */
+.slideshow-container img {
+   width: 100%;
    height: auto;
-   background-color: rgb(22, 22, 30); /* fallback if image is smaller */
+   cursor: zoom-in;
+   transition: transform 0.3s ease;
 }
 
-/* Lightbox overlay */
-.lightbox {
-   display: none;
+/* Zoom viewer (hidden by default) */
+.zoom-viewer {
    position: fixed;
    top: 0;
    left: 0;
    width: 100%;
    height: 100%;
    background: rgba(0, 0, 0, 0.9);
+   display: flex;
    justify-content: center;
    align-items: center;
-   z-index: 1000;
-   cursor: zoom-out;
+   visibility: hidden;
+   opacity: 0;
+   transition: opacity 0.3s ease;
+   z-index: 999;
 }
 
-/* Full-size image styling */
-.lightbox img {
+/* When active */
+.zoom-viewer.active {
+   visibility: visible;
+   opacity: 1;
+}
+
+/* Full-size image */
+.zoom-viewer img {
    max-width: 90%;
    max-height: 90%;
    border-radius: 10px;
-   box-shadow: 0 0 25px rgba(255, 215, 0, 0.4); /* subtle gold glow */
-   cursor: default;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+   cursor: zoom-out;
    transition: transform 0.3s ease;
 }
 
-/* Small zoom effect when opened */
-.lightbox img:hover {
-   transform: scale(1.02);
-}
-/* for slideshow */
-/* === Slideshow Container === */
-.slideshow-container {
-   position: relative;
-   max-width: 900px;
-   margin: 40px auto;
-   border-radius: 12px;
-   overflow: hidden;
-   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Each individual slide */
-.slide {
-   display: none;
-   width: 100%;
-}
-
-.slide img {
-   width: 100%;
-   height: auto;
-   border-radius: 12px;
-   cursor: pointer;
-   transition: transform 0.4s ease;
-}
-
-.slide img:hover {
-   transform: scale(1.03);
-}
-
-/* === Fade Animation === */
-.fade {
-   animation-name: fade;
-   animation-duration: 1.5s;
-}
-
-@keyframes fade {
-   from {
-      opacity: 0.4;
-   }
-   to {
-      opacity: 1;
-   }
-}
-
-/* === Lightbox Overlay === */
-.lightbox {
-   display: none;
-   position: fixed;
-   z-index: 1000;
-   left: 0;
-   top: 0;
-   width: 100%;
-   height: 100%;
-   background: rgba(0, 0, 0, 0.85);
-   justify-content: center;
-   align-items: center;
-}
-
-.lightbox img {
-   max-width: 90%;
-   max-height: 90%;
-   border-radius: 10px;
-   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
-/* === GUNDAM FONT IMPORT === */
+/* ===== 🧠 Gundam Font ===== */
 @font-face {
    font-family: "Gundam";
    src: url("Gundam.otf") format("opentype"), url("Gundam.ttf") format("truetype");
-   font-weight: normal;
-   font-style: normal;
 }
 
-/* === APPLY GUNDAM FONT === */
 header h1,
 footer .brand,
 h2,
@@ -633,162 +371,111 @@ nav a,
    font-family: "Gundam", sans-serif;
    letter-spacing: 2px;
    text-transform: uppercase;
-   color: #e3e3e3; /* metallic white text */
-   text-shadow: 0 0 8px rgba(150, 200, 255, 0.35); /* subtle glow */
-}
-p {
-   font-family: "Gundam", sans-serif;
-   color: rgb(255, 49, 49);
+   color: #e3e3e3;
+   text-shadow: 0 0 8px rgba(150, 200, 255, 0.35);
 }
 
-/* Optional style for emphasis */
-h1,
-h2 {
-   font-size: 2rem;
-   font-weight: normal;
-}
-
-/* Optional: glowing hover effect for navigation */
-nav a:hover {
-   color: #00ccff;
-   text-shadow: 0 0 10px rgba(0, 200, 255, 0.6);
-   transition: 0.3s ease;
-}
-
+p,
 figcaption {
    font-family: "Gundam", sans-serif;
    color: rgb(255, 49, 49);
 }
-/* ===== 🌐 UNIVERSAL RESPONSIVE STYLES ===== */
-
-/* Tablet and small laptop adjustments */
-@media (max-width: 1024px) {
-   body {
-      font-size: 1rem;
-   }
-
-   header h1 {
-      font-size: 2rem;
-   }
-
-   nav ul {
-      gap: 20px;
-   }
-
-   main {
-      padding: 20px;
-   }
-
-   .pdf-container,
-   #pdf-viewer iframe {
-      height: 75vh;
-   }
-
-   .gallery {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-   }
+/* --- Lightbox Overlay --- */
+.lightbox {
+   display: none; /* Hidden by default */
+   position: fixed;
+   z-index: 9999;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.9);
+   justify-content: center;
+   align-items: center;
+   cursor: zoom-out;
+   transition: opacity 0.3s ease;
+   opacity: 0;
 }
 
-/* Large mobile and portrait tablets */
-@media (max-width: 768px) {
-   header {
-      padding: 30px 0 15px 0;
-      background-size: cover;
-   }
+/* When active, make visible */
+.lightbox.active {
+   display: flex;
+   opacity: 1;
+}
 
+/* --- Image Inside Lightbox --- */
+.lightbox img {
+   max-width: 80%;
+   max-height: 80%;
+   border-radius: 12px;
+   box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+   cursor: default;
+   transition: transform 0.3s ease, opacity 0.3s ease;
+   opacity: 0;
+}
+
+/* Fade image in smoothly once lightbox is active */
+.lightbox.active img {
+   opacity: 1;
+}
+
+.lightbox img:hover {
+   transform: scale(1.02);
+}
+
+/* === Mobile Screens (480px and below) === */
+@media screen and (max-width: 480px) {
    header h1 {
-      font-size: 1.6rem;
-      line-height: 1.2;
+      font-size: 1.2em;
    }
 
    nav ul {
       flex-direction: column;
-      gap: 12px;
+      align-items: center;
+      gap: 0.5rem;
    }
 
-   nav ul li a {
-      font-size: 1em;
+   .slideshow-container {
+      max-width: 100%;
+      border-radius: 6px;
    }
 
-   main {
-      margin: 20px;
-      padding: 20px;
+   .zoom-viewer img {
+      max-width: 100%;
+      max-height: 80%;
    }
 
-   .chapters-grid {
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+   h1,
+   h2 {
+      font-size: 1.2em;
    }
 
-   .pdf-container {
-      width: 95%;
-      height: 70vh;
+   p {
+      font-size: 0.95em;
+      padding: 0 8px;
    }
 
-   #pdf-viewer iframe {
-      height: 70vh;
-   }
-
-   .gallery {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-   }
-
+   /* ✅ Footer: stack and center everything */
    .site-footer {
       text-align: center;
-   }
-}
-
-/* Small mobile devices (iPhones, Galaxy, etc.) */
-@media (max-width: 480px) {
-   body {
-      font-size: 0.95rem;
-      overflow-x: hidden;
-   }
-
-   header {
-      padding: 25px 0 10px 0;
-      background-position: center;
-   }
-
-   header h1 {
-      font-size: 1.4rem;
-   }
-
-   #clock {
-      top: 10px;
-      left: 10px;
-      font-size: 0.8em;
-   }
-
-   main {
-      margin: 15px 10px;
-      padding: 15px;
-   }
-
-   .chapter {
-      max-width: 90%;
-      margin: 0 auto;
-   }
-
-   .pdf-container {
-      width: 100%;
-      height: 65vh;
-      border-radius: 0;
-   }
-
-   #pdf-viewer iframe {
-      height: 65vh;
-   }
-
-   .gallery {
-      grid-template-columns: 1fr;
-      gap: 20px;
-   }
-
-   .gallery-item {
-      width: 100%;
-   }
-
-   .site-footer {
       padding: 20px 10px;
+   }
+
+   .footer-inner {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+   }
+
+   .footer-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-align: center;
+   }
+
+   .footer-meta {
+      text-align: center;
+      font-size: 0.9em;
    }
 }

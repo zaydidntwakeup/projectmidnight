@@ -2,41 +2,43 @@ function openLightbox(imgElement) {
    const lightbox = document.getElementById("lightbox");
    const lightboxImg = document.getElementById("lightbox-img");
    lightboxImg.src = imgElement.src;
+
+   // Reset inline display if it was set to "none"
    lightbox.style.display = "flex";
+   requestAnimationFrame(() => {
+      lightbox.classList.add("active");
+   });
 }
 
 function closeLightbox(event) {
-   // Close only if the user clicks outside the image
    if (event.target.id === "lightbox") {
-      event.currentTarget.style.display = "none";
+      const lightbox = document.getElementById("lightbox");
+      lightbox.classList.remove("active");
+
+      // Use transitionend to remove display only after fade-out completes
+      lightbox.addEventListener(
+         "transitionend",
+         () => {
+            lightbox.style.display = "none";
+         },
+         { once: true }
+      );
    }
 }
-// === espionage.js ===
-// Handles PDF viewing inside the page (mobile & desktop friendly)
 
-function openPDF(pdfSrc, title) {
-   const viewer = document.getElementById("pdf-viewer");
-   const frame = document.getElementById("pdf-frame");
-   const pdfTitle = document.getElementById("pdf-title");
-
-   frame.src = pdfSrc + "#view=FitH"; // Fit horizontally for readability
-   pdfTitle.textContent = title;
-
-   viewer.classList.remove("hidden");
-
-   // Only disable background scroll on desktop, not mobile
-   if (window.innerWidth > 768) {
-      document.body.style.overflow = "hidden";
+// Optional: allow Escape key to close
+document.addEventListener("keydown", (e) => {
+   if (e.key === "Escape") {
+      const lightbox = document.getElementById("lightbox");
+      if (lightbox.classList.contains("active")) {
+         lightbox.classList.remove("active");
+         lightbox.addEventListener(
+            "transitionend",
+            () => {
+               lightbox.style.display = "none";
+            },
+            { once: true }
+         );
+      }
    }
-
-   viewer.scrollIntoView({ behavior: "smooth" });
-}
-
-function closePDF() {
-   const viewer = document.getElementById("pdf-viewer");
-   const frame = document.getElementById("pdf-frame");
-
-   frame.src = "";
-   viewer.classList.add("hidden");
-   document.body.style.overflow = "auto"; // Restore scrolling
-}
+});

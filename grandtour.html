@@ -7,7 +7,7 @@
       <link rel="stylesheet" href="base.css" />
       <link rel="stylesheet" href="animation.css" />
       <script src="clock.js"></script>
-      <script src="grandtour.js"></script>
+      <!-- removed grandtour.js because PDFs now open in new tabs -->
    </head>
    <body>
       <header>
@@ -30,63 +30,81 @@
             <section id="grandtour">
                <div class="chapters-grid">
                   <!-- Chapter 1 -->
-                  <div class="chapter" onclick="openPDF('grandtour/gt1.pdf', 'Chapter 1')">
-                     <img src="grandtour/grandtour1.jpeg" alt="Chapter 1 Cover" />
-                     <h3>Chapter 1</h3>
-                     <p>It's always great day when the rent is due...</p>
-                  </div>
+                  <a class="chapter-link" href="grandtour/gt1.pdf#view=FitH" target="_blank" rel="noopener noreferrer" aria-label="Open Chapter 1 in a new tab (PDF)">
+                     <div class="chapter">
+                        <img src="grandtour/grandtour1.jpeg" alt="Chapter 1 Cover" />
+                        <h3>Chapter 1</h3>
+                        <p>It's always great day when the rent is due...</p>
+                     </div>
+                  </a>
 
                   <!-- Chapter 2 -->
-                  <div class="chapter" onclick="openPDF('grandtour/gt2.pdf', 'Chapter 2')">
-                     <img src="grandtour/grandtour2.jpeg" alt="Chapter 2 Cover" />
-                     <h3>Chapter 2</h3>
-                     <p>At least rent got paid...it did right?</p>
-                  </div>
+                  <a class="chapter-link" href="grandtour/gt2.pdf#view=FitH" target="_blank" rel="noopener noreferrer" aria-label="Open Chapter 2 in a new tab (PDF)">
+                     <div class="chapter">
+                        <img src="grandtour/grandtour2.jpeg" alt="Chapter 2 Cover" />
+                        <h3>Chapter 2</h3>
+                        <p>At least rent got paid...it did right?</p>
+                     </div>
+                  </a>
 
                   <!-- Chapter 3 -->
-                  <div class="chapter" onclick="openPDF('grandtour/gt3.pdf', 'Chapter 3')">
-                     <img src="grandtour/grandtour3.jpeg" alt="Chapter 3 Cover" />
-                     <h3>Chapter 3</h3>
-                     <p>There's alot on the line for tonight...Kira better be ready!</p>
-                  </div>
+                  <a class="chapter-link" href="grandtour/gt3.pdf#view=FitH" target="_blank" rel="noopener noreferrer" aria-label="Open Chapter 3 in a new tab (PDF)">
+                     <div class="chapter">
+                        <img src="grandtour/grandtour3.jpeg" alt="Chapter 3 Cover" />
+                        <h3>Chapter 3</h3>
+                        <p>There's a lot on the line for tonight... Kira better be ready!</p>
+                     </div>
+                  </a>
 
                   <!-- Chapter 4 -->
-                  <div class="chapter" onclick="openPDF('grandtour/gt4.pdf', 'Chapter 4')">
-                     <img src="grandtour/grandtour4.jpeg" alt="Chapter 4 Cover" />
-                     <h3>Chapter 4</h3>
-                     <p>Adapt or lose it all.</p>
-                  </div>
+                  <a class="chapter-link" href="grandtour/gt4.pdf#view=FitH" target="_blank" rel="noopener noreferrer" aria-label="Open Chapter 4 in a new tab (PDF)">
+                     <div class="chapter">
+                        <img src="grandtour/grandtour4.jpeg" alt="Chapter 4 Cover" />
+                        <h3>Chapter 4</h3>
+                        <p>Adapt or lose it all.</p>
+                     </div>
+                  </a>
 
                   <!-- Chapter 5 -->
-                  <div class="chapter" onclick="openPDF('grandtour/gt5.pdf', 'Chapter 5')">
-                     <img src="grandtour/grandtour5.jpeg" alt="Chapter 5 Cover" />
-                     <h3>Chapter 5</h3>
-                     <p>Okay so maybe he was just a little insane.</p>
-                  </div>
+                  <a class="chapter-link" href="grandtour/gt5.pdf#view=FitH" target="_blank" rel="noopener noreferrer" aria-label="Open Chapter 5 in a new tab (PDF)">
+                     <div class="chapter">
+                        <img src="grandtour/grandtour5.jpeg" alt="Chapter 5 Cover" />
+                        <h3>Chapter 5</h3>
+                        <p>Okay so maybe he was just a little insane.</p>
+                     </div>
+                  </a>
+
                   <!-- Chapter 6 -->
-                  <div class="chapter" onclick="openPDF('grandtour/gt6.pdf', 'Chapter 6')">
-                     <img src="grandtour/grandtour6.jpeg" alt="Chapter 6 Cover" />
-                     <h3>Chapter 6</h3>
-                     <p>It's just something new for us everyday. I'm exhausted.</p>
-                  </div>
+                  <a class="chapter-link" href="grandtour/gt6.pdf#view=FitH" target="_blank" rel="noopener noreferrer" aria-label="Open Chapter 6 in a new tab (PDF)">
+                     <div class="chapter">
+                        <img src="grandtour/grandtour6.jpeg" alt="Chapter 6 Cover" />
+                        <h3>Chapter 6</h3>
+                        <p>It's just something new for us everyday. I'm exhausted.</p>
+                     </div>
+                  </a>
 
                   <!-- Chapter 7 -->
-                  <div class="chapter" onclick="openPDF('grandtour/gt7.pdf', 'Chapter 7')">
-                     <img src="grandtour/grandtour7.jpeg" alt="Chapter 7 Cover" />
-                     <h3>Chapter 7</h3>
-                     <p>If you're feeling froggy. leap.</p>
-                  </div>
+                  <a class="chapter-link" href="grandtour/gt7.pdf#view=FitH" target="_blank" rel="noopener noreferrer" aria-label="Open Chapter 7 in a new tab (PDF)">
+                     <div class="chapter">
+                        <img src="grandtour/grandtour7.jpeg" alt="Chapter 7 Cover" />
+                        <h3>Chapter 7</h3>
+                        <p>If you're feeling froggy. leap.</p>
+                     </div>
+                  </a>
 
                   <!-- Chapter 8 -->
-                  <div class="chapter" onclick="openPDF('grandtour/gt8.pdf', 'Chapter 8')">
-                     <img src="grandtour/grandtour8.jpeg" alt="Chapter 8 Cover" />
-                     <h3>Chapter 8</h3>
-                     <p>Rain tends to fuel people's anger.</p>
-                  </div>
+                  <a class="chapter-link" href="grandtour/gt8.pdf#view=FitH" target="_blank" rel="noopener noreferrer" aria-label="Open Chapter 8 in a new tab (PDF)">
+                     <div class="chapter">
+                        <img src="grandtour/grandtour8.jpeg" alt="Chapter 8 Cover" />
+                        <h3>Chapter 8</h3>
+                        <p>Rain tends to fuel people's anger.</p>
+                     </div>
+                  </a>
+
                   <!-- Add more chapters as needed -->
                </div>
 
-               <!-- Embedded PDF viewer area -->
+               <!-- (Optional) If you want the in-page viewer later, keep it commented out -->
                <div id="pdf-viewer" class="hidden">
                   <div class="pdf-header">
                      <button onclick="closePDF()">✕</button>

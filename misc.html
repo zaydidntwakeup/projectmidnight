@@ -29,28 +29,28 @@
             <!-- 🎞️ Slideshow Section -->
             <section class="slideshow-container">
                <div class="slide fade">
-                  <img src="cross.jpeg" alt="Cross" onclick="openLightbox(this)" />
+                  <img src="cross.jpeg" alt="Cross" onclick="zoomImage(this)" />
                </div>
                <div class="slide fade">
-                  <img src="reflection.jpeg" alt="Water reflection" onclick="openLightbox(this)" />
+                  <img src="reflection.jpeg" alt="Water reflection" onclick="zoomImage(this)" />
                </div>
                <div class="slide fade">
-                  <img src="2rth.jpeg" alt="2RTH" onclick="openLightbox(this)" />
+                  <img src="2rth.jpeg" alt="2RTH" onclick="zoomImage(this)" />
                </div>
                <div class="slide fade">
-                  <img src="images/fish.jpeg" alt="Fish reflection" onclick="openLightbox(this)" />
+                  <img src="images/fish.jpeg" alt="Fish reflection" onclick="zoomImage(this)" />
                </div>
                <div class="slide fade">
-                  <img src="images/mech.jpeg" alt="Purple mech" onclick="openLightbox(this)" />
+                  <img src="images/mech.jpeg" alt="Purple mech" onclick="zoomImage(this)" />
                </div>
                <div class="slide fade">
-                  <img src="images/pitlotgundam.jpeg" alt="Gundam Pilot" onclick="openLightbox(this)" />
+                  <img src="images/pitlotgundam.jpeg" alt="Gundam Pilot" onclick="zoomImage(this)" />
                </div>
             </section>
 
-            <!-- 💡 Lightbox Overlay -->
-            <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-               <img id="lightbox-img" src="" alt="Full-size image" />
+            <!-- 🔍 Full-size zoom viewer -->
+            <div id="zoom-viewer" class="zoom-viewer" onclick="closeZoom(event)">
+               <img id="zoom-img" src="" alt="Zoomed image" />
             </div>
          </article>
       </main>
