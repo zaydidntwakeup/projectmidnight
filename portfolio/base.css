@@ -159,6 +159,7 @@ label {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="number"],
 textarea {
    width: 100%;
