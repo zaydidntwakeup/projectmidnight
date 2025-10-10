@@ -267,6 +267,9 @@ input[type="submit"]:hover {
    color: inherit;
    text-decoration: none;
 }
+.hidden {
+   display: none !important;
+}
 
 /* Provide visible focus styling for keyboard users */
 .chapter-link:focus,
