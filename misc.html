@@ -64,30 +64,18 @@
 
             <!-- Audio Player -->
             <audio id="audio-player" controls>
-               <source src="audio/futurexforgivemenots.mp3" type="audio/mp3" />
+               <source src="audio/FUTUREXFORGIVEMENOTS.mp3" type="audio/mp3" />
                Your browser does not support the audio element.
             </audio>
 
             <!-- Playlist List -->
             <ul id="playlist">
-               <li data-src="audio/futurexforgivemenots.mp3" class="active">FUTURE X FORGIVE ME NOTS</li>
-               <li data-src="audio/rockysuperpeople.mp3">ASAP ROCKY X SUPER PEOPLE</li>
+               <li data-src="audio/FUTUREXFORGIVEMENOTS.mp3" class="active">FUTURE X FORGIVE ME NOTS</li>
+               <li data-src="audio/ROCKYSUPERPEOPLE.mp3">ASAP ROCKY X SUPER PEOPLE</li>
             </ul>
          </section>
          <script src="slideshow.js"></script>
-         <script>
-            const player = document.getElementById("audio-player");
-            const tracks = document.querySelectorAll("#playlist li");
-
-            tracks.forEach((track) => {
-               track.addEventListener("click", () => {
-                  tracks.forEach((t) => t.classList.remove("active"));
-                  track.classList.add("active");
-                  player.src = track.getAttribute("data-src");
-                  player.play();
-               });
-            });
-         </script>
+         <script src="playlist.js"></script>
       </main>
 
       <!-- FOOTER -->
