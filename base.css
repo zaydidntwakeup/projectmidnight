@@ -12,7 +12,7 @@ body {
 /* General container */
 .container {
    width: 100%;
-   max-width: 1200px;
+   max-width: 1135px;
    max-height: 100%;
    margin: auto;
    padding: 20px;
