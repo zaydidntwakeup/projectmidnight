@@ -7,8 +7,9 @@
       <link rel="stylesheet" href="base.css" />
       <link rel="stylesheet" href="animation.css" />
       <script src="clock.js"></script>
-      <!-- espionage.js is still fine for your lightbox/gallery -->
+      <!-- espionage.js for lightbox/gallery -->
       <script src="espionage.js"></script>
+      <script src="espionageslideshow.js"></script>
    </head>
    <body>
       <!-- HEADER -->
@@ -32,35 +33,34 @@
             <!-- PDF Cover Section -->
             <section class="pdf-cover">
                <a href="espionage/espionage2114.pdf#view=FitH" target="_blank" rel="noopener noreferrer" aria-label="Open Espionage 2114 PDF in a new tab">
-                  <img src="espionage/espionage2114.png" alt="ARCHIVE DOCUMENT" class="pdf-image" />
+                  <img src="espionage/espionage cover.jpeg" alt="ARCHIVE DOCUMENT" class="pdf-image" />
                </a>
-               <p class="pdf-caption">PRIMARY DOCUMENT</strong></p>
             </section>
 
             <!-- Gallery Section -->
             <section class="gallery">
                <div class="gallery-item">
-                  <img src="espionage/aika.jpeg" alt="ARCHIVE IMAGE" onclick="openLightbox(this)" />
+                  <img src="espionage/aika1.jpeg" alt="ARCHIVE IMAGE" onclick="openLightbox(this)" />
                   <div class="caption">AIKA THE CODERIPPER</div>
                </div>
                <div class="gallery-item">
-                  <img src="espionage/noctis.jpeg" alt="ARCHIVE IMAGE" onclick="openLightbox(this)" />
+                  <img src="espionage/noctis1.jpeg" alt="ARCHIVE IMAGE" onclick="openLightbox(this)" />
                   <div class="caption">NOCTIS A.K.A. WRAITH</div>
                </div>
                <div class="gallery-item">
-                  <img src="espionage/sylas.jpeg" alt="ARCHIVE IMAGE" onclick="openLightbox(this)" />
+                  <img src="espionage/sylas1.jpeg" alt="ARCHIVE IMAGE" onclick="openLightbox(this)" />
                   <div class="caption">SYLAS THE BYTESMITH</div>
                </div>
                <div class="gallery-item">
-                  <img src="espionage/voss.jpeg" alt="ARCHIVE IMAGE" onclick="openLightbox(this)" />
+                  <img src="espionage/voss1.jpeg" alt="ARCHIVE IMAGE" onclick="openLightbox(this)" />
                   <div class="caption">CHIEF ARDEN VOSS</div>
                </div>
                <div class="gallery-item">
-                  <img src="espionage/sara.jpeg" alt="ARCHIVE IMAGE" onclick="openLightbox(this)" />
+                  <img src="espionage/sara1.jpeg" alt="ARCHIVE IMAGE" onclick="openLightbox(this)" />
                   <div class="caption">SARA</div>
                </div>
                <div class="gallery-item">
-                  <img src="espionage/preston.jpeg" alt="ARCHIVE IMAGE" onclick="openLightbox(this)" />
+                  <img src="espionage/preston1.jpeg" alt="ARCHIVE IMAGE" onclick="openLightbox(this)" />
                   <div class="caption">PRESTON GRANT</div>
                </div>
             </section>
@@ -69,6 +69,23 @@
             <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
                <img id="lightbox-img" src="" alt="" />
             </div>
+            <!-- Slideshow Trigger -->
+            <section class="slideshow-trigger">
+               <img
+                  src="espionage/triggerimage.jpeg"
+                  alt="ACCESS ARCHIVE"
+                  onclick="startSlideshow(this)"
+                  data-slides="
+                  espionage/tokyo.jpeg,
+                  espionage/sanfransisco.jpeg,
+                  espionage/saudiarabia.jpeg,
+                  espionage/blackphantom.jpeg,
+                  espionage/karambit.jpeg,
+                  espionage/plasmalance.jpeg,
+               "
+               />
+               <p class="trigger-caption">ACCESS ARCHIVE</p>
+            </section>
          </article>
       </main>
 
