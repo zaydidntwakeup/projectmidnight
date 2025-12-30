@@ -119,10 +119,43 @@ img {
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-section img {
+/* section img {
    display: block;
    height: auto;
    max-width: 45%;
+}*/
+section img:not(.signal-frame) {
+   display: block;
+   height: auto;
+   max-width: 45%;
+}
+
+.about-image {
+   position: relative;
+   width: 100vw;
+   height: 100vh;
+   margin: 0 auto;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.signal-frame {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+   opacity: 0;
+   transition: opacity 0.35s ease;
+   cursor: pointer;
+}
+
+.signal-frame.active {
+   opacity: 1;
+   z-index: 1;
 }
 
 /* ===== Video ===== */
