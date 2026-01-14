@@ -1,26 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
-   const frames = document.querySelectorAll(".signal-frame");
-   if (!frames.length) return;
-
-   let current = 0;
-   let locked = false;
-
-   frames[current].classList.add("active");
-
-   function nextFrame() {
-      if (locked) return;
-      locked = true;
-
-      frames[current].classList.remove("active");
-      current = (current + 1) % frames.length;
-
-      setTimeout(() => {
-         frames[current].classList.add("active");
-         locked = false;
-      }, 160); // intentional beat
+   if (!window.pdfjsLib) {
+      console.error("PDF.js not loaded");
+      return;
    }
 
-   frames.forEach((frame) => {
-      frame.addEventListener("click", nextFrame);
+   const url = "mag/pmmag.pdf";
+
+   let pdfDoc = null;
+   let pageNum = 1;
+   const scale = window.innerWidth < 768 ? 1.0 : 1.3;
+
+   const canvas = document.getElementById("pdfCanvas");
+   const ctx = canvas.getContext("2d");
+
+   function renderPage(num) {
+      pdfDoc.getPage(num).then((page) => {
+         const viewport = page.getViewport({ scale });
+         canvas.width = viewport.width;
+         canvas.height = viewport.height;
+
+         page.render({
+            canvasContext: ctx,
+            viewport,
+         });
+      });
+   }
+
+   window.pdfjsLib.getDocument(url).promise.then((pdf) => {
+      pdfDoc = pdf;
+      renderPage(pageNum);
    });
+
+   document.getElementById("prevPage").onclick = () => {
+      if (pageNum <= 1) return;
+      pageNum--;
+      renderPage(pageNum);
+   };
+
+   document.getElementById("nextPage").onclick = () => {
+      if (pageNum >= pdfDoc.numPages) return;
+      pageNum++;
+      renderPage(pageNum);
+   };
 });

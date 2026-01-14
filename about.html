@@ -7,6 +7,13 @@
       <link rel="stylesheet" href="base.css" />
       <link rel="stylesheet" href="about.css" />
       <script src="clock.js"></script>
+      <script type="module">
+         import * as pdfjsLib from "./pdfjs/pdf.mjs";
+
+         pdfjsLib.GlobalWorkerOptions.workerSrc = "./pdfjs/pdf.worker.mjs";
+
+         window.pdfjsLib = pdfjsLib;
+      </script>
       <script src="signal.js" defer></script>
    </head>
 
@@ -27,8 +34,16 @@
       <main class="about-container">
          <section class="about-section">
             <div class="about-image">
-               <img src="images/pmzay.jpg" alt="Project Midnight Signal" class="signal-frame active" />
-               <img src="images/machine.jpeg" alt="Project Midnight Signal" class="signal-frame" />
+               <!-- PDF Viewer -->
+               <div class="pdf-viewer">
+                  <button class="pdf-arrow left" id="prevPage">‹</button>
+
+                  <canvas id="pdfCanvas"></canvas>
+
+                  <button class="pdf-arrow right" id="nextPage">›</button>
+               </div>
+               <!-- Flaunt -->
+               <img src="images/machine.jpeg" alt="Project Midnight Signal" class="signal-secondary" />
             </div>
 
             <div class="about-text">
