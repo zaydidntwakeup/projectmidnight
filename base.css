@@ -134,7 +134,7 @@ ssection img:not(.signal-secondary) {
 /* pdf for about page */
 .pdf-viewer {
    position: relative;
-   width: 66%;
+   width: clamp(320px, 55%, 450px);
    max-width: 900px;
    margin: 0 auto 4rem;
    display: flex;
